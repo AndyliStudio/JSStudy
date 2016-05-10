@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hash Table</title>
+    <script type="text/javascript">
+    	function HashTable(){
+    		this.value = new Array();
+    	}
+    	HashTable.prototype.add = function (val){
+    		this.value.push(val);
+    	}
+    	HashTable.prototype.remove = function (index){
+    		this.value.splice(index, 1);
+    	}
+    	HashTable.prototype.contains = function (val){
+    		var temp = this.value;
+    		for(var i=0; i<temp.length; i++){
+    			if(val == temp[i]){
+    				return true;
+    			}
+    		}
+    		return false;
+    	}
+    	HashTable.prototype.length = function (){
+    		return this.value.length;
+    	}
+
+    	var hashTable = new HashTable();
+    	hashTable.add("Andyli");
+    	hashTable.add("123");
+    	hashTable.add("sdas");
+    	hashTable.add("2312");
+    	console.log(hashTable);
+    	hashTable.remove(1);
+    	console.log(hashTable);
+    	console.log(hashTable.contains('123'));
+    	console.log(hashTable.length);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
